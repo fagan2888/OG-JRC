@@ -54,6 +54,8 @@ Once Jupyter is installed--whether through Anaconda or through the Jupyter websi
 3. A Jupyter notebook session will open in your browser, showing the available `*.ipynb` files in that directory.
 4. Double click on the Jupyter notebook you would like to open.
 
+It is worth noting that you can also simply navigate to the URL of the Jupyter notebook file in the GitHub repository on the web (e.g., [https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonReadIn.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonReadIn.ipynb)). You can read the Jupyter notebook on GitHub.com, but you cannot execute any of the cells. You can only execute the cells in the Jupyter notebook when you follow the steps above and open the file from your terminal.
+
 
 ### 5.2. Using an open Jupyter notebook
 
@@ -70,5 +72,13 @@ When you are done with a Jupyter notebook, you first save any changes that you w
 
 
 ## 6. Basic Python tutorials
+
+For this training, we have included in this repository five basic Python tutorials in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory.
+
+1. [PythonReadIn.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonReadIn.ipynb). This Jupyter notebook ...
+2. [PythonNumpyPandas.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonNumpyPandas.ipynb). This Jupyter notebook ...
+3. [PythonDescribe.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonDescribe.ipynb). This Jupyter notebook ...
+4. [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb). This Jupyter notebook ...
+5. [PythonVisualize.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonVisualize.ipynb). This Jupyter notebook ...
 
 ## 7. Intermediate Python tutorials
