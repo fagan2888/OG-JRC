@@ -19,8 +19,7 @@ Pre-course Tutorial Areas
 3. PEP8, docstring commenting, and module structure
 4. Git and GitHub tutorial
 5. Jupyter Notebooks
-6. Basic Python tutorials (data structures, logic, functions and modules)
-7. Intermediate Python tutorials (pandas, root finders and minimizers)
+6. Basic Python tutorials (data structures, logic, functions and modules, pandas, root finders and minimizers)
 
 
 ## 1. Instructions for installing the Anaconda distribution of Python
@@ -112,7 +111,7 @@ There are fewer conventions in docstring structure, but we have developed some o
 
 ## 4. Git and GitHub tutorial
 
-We have included a tutorial on using [Git and GitHub.com](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/git_tutorial.pdf) in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory of this repository.
+We have included a tutorial on using [Git and GitHub.com](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/git_tutorial.pdf) in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory of this repository. Git is a powerful version control software that comes natively installed on many machines and is widely used. GitHub.com is the most widely used online platform for hosting open source projects and integrating with Git software. Git has a significant learning curve, but it is essential for large collaborations that involve software development.
 
 
 ## 5. Jupyter Notebooks
@@ -150,7 +149,7 @@ A Code cell will have a `In [ ]:` immediately to the left of the cell for input.
 When you are done with a Jupyter notebook, you first save any changes that you want to remain with the notebook. Then you close the browser windows associated with that Jupyter notebook session. You must then close the local server that was opened to run the Jupyter notebook in your terminal window. On a Mac or Windows, this is done by going to your terminal window and typing `Ctrl-C` and then selecting `y` for yes and hitting `Enter`.
 
 
-## 6. Basic Python tutorials
+## 6. Python tutorials
 
 For this training, we have included in this repository five basic Python tutorials in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory.
 
@@ -159,9 +158,22 @@ For this training, we have included in this repository five basic Python tutoria
 3. [PythonDescribe.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonDescribe.ipynb). This Jupyter notebook ...
 4. [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb). This Jupyter notebook ...
 5. [PythonVisualize.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonVisualize.ipynb). This Jupyter notebook ...
+6. [TODO: Add root finder and minimization Jupyter notebook.]
 
 To further ones Python programming skills, a number of other great resources exist.
 
-## 7. Intermediate Python tutorials
+* The [official Python 3 tutorial site](https://docs.python.org/3/tutorial/)
+* [QuantEcon.net](https://lectures.quantecon.org/py/index.html) is a site run by [Thomas Sargent](http://www.tomsargent.com/) (NYU Stern) and [John Stachurski](http://johnstachurski.net/) (Australia National University). QuantEcon has a very large number of high-quality economics focused computational tutorials in Python.
+* [Python computational labs](http://www.acme.byu.edu/2016-2017-materials/) of the Applied and Computational Mathematics Emphasis at Brigham Young University
+* [Code Academy's Python learning module](https://www.codecademy.com/learn/python)
 
-[TODO: Add root finder and minimization Jupyter notebook.]
+In addition, a number of excellent textbooks and reference manuals are very helpful and may be available in your local library. Or you may just want to have these in your own library. Lutz (2013) is a giant 1,500-page reference manual that has an expansive collection of materials targeted at beginners. Beazley (2009) is a more concise reference but is targeted at readers with some experience using Python. Despite its focus on a particular set of tools in the Python programming language, McKinney (2013) has a great introductory section that can serve as a good starting tutorial. Further, its focus on Python's data analysis capabilities is truly one of the important features of Python. Rounding out the list is Langtangen (2010). This book's focus on scientists and engineers makes it a unique reference for optimization, wrapping C and Fortran and other scientific computing topics using Python.
+
+
+## References
+
+* Beazley, David M., *Python Essential Reference*, 4th edition, Addison-Wesley (2009).
+* Langtangen, Hans Petter, *Python Scripting for Computational Science*, Texts in Computational Science and Engineering, 3rd edition, Springer (2010).
+* Lutz, Mark, *Learning Python*, 5th edition, O'Reilly Media, Inc. (2013)
+* McKinney, Wes, *Python for Data Analysis*, O'Reilly Median, Inc. (2013)
+
