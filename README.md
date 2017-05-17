@@ -32,9 +32,18 @@ We recommend that each participant download the Anaconda distribution of Python 
 
 ## 2. Text editor suggestions
 
+[TODO: Add instruction about Atom, Sublime Text 3, and Vim.]
+
+
 ## 3. PEP8, docstring commenting, and module structure
 
+[TODO: Add instruction here. Reference the [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb) Jupyter notebook.]
+
+
 ## 4. Git and GitHub tutorial
+
+We have included a tutorial on using [Git and GitHub.com](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/git_tutorial.pdf) in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory of this repository.
+
 
 ## 5. Jupyter Notebooks
 
@@ -82,3 +91,5 @@ For this training, we have included in this repository five basic Python tutoria
 5. [PythonVisualize.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonVisualize.ipynb). This Jupyter notebook ...
 
 ## 7. Intermediate Python tutorials
+
+[TODO: Add root finder and minimization Jupyter notebook.]
