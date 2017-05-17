@@ -90,6 +90,14 @@ Computer code executes some set of commands in an organized way. In every case, 
 2. Be accessible and usable to other programmers.
 3. Be scalable and integrable with other projects and procedures.
 
+Bill Gates is credited with the following plea for efficiency and parsimony in code writing.
+
+> "Measuring programming progress by lines of code is like measuring aircraft building progress by weight."
+
+Strong support for points (2) and (3) is Eagleson's Law.
+
+> "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else."
+
 Because of the latter two characteristics, Python code has developed some conventions and best practices, some of which have been institutionalized in the [PEP 8--Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) ("PEP" stands for Python Enhancement Proposals). Key examples PEP 8 Python coding conventions are the following.
 
 * Indents should be 4 spaces (not tab)
@@ -99,8 +107,7 @@ Because of the latter two characteristics, Python code has developed some conven
 
 In the text editors Atom, Sublime Text 3, and Vim, you can install Linter packages that highlight areas of your code that break PEP 8 rules and tell you what the violation is.
 
-
-[TODO: Add instruction here. Reference the [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb) Jupyter notebook.]
+There are fewer conventions in docstring structure, but we have developed some of our own that are outlined in the [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb) Jupyter notebook. See especially Sections 3 and 4.
 
 
 ## 4. Git and GitHub tutorial
