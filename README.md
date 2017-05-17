@@ -32,10 +32,18 @@ We recommend that each participant download the Anaconda distribution of Python 
 
 ## 2. Text editor suggestions
 
-You will want a capable text editor for developing your code.  There are three we recommend: [Atom](https://atom.io), [Sublime Text](https://www.sublimetext.com), and [Vim](http://www.vim.org).  Atom and Vim are completely Free, a trial version of Sublime Text is available for free, but a licensed version is $70.
-[TODO: Add instruction about Atom, Sublime Text 3, and Vim.]
+In our recommended Python development workflow, you will write Python scripts and modules (`*.py` files) in a text editor. Then you will run those scripts from your terminal. You will want a capable text editor for developing your code. Many capable text editors exist, but we recommend three.
+
+1. [Atom](https://atom.io)
+2. [Sublime Text 3](https://www.sublimetext.com)
+3. [Vim](http://www.vim.org)
+
+Atom and Vim are completely free. A trial version of Sublime Text 3 is available for free, but a licensed version is $70 (US dollars). In the following subsections, we give some of the details of each of the above three text editors.
+
 
 ### 2.1. Atom
+
+[Atom](https://atom.io) is an open source text editor developed by people at GitHub.com. This editor has all the features of Sublime Text 3, but it also allows users full customizability. Further, it has been a while now that the users of Atom have surpassed the critical mass necessary to keep the editor progressing with the most cutting edge additions.
 
 There are several packages you'll want to install with Atom.  Once Atom is installed, you can add packages by navigating Atom->Preferences->Install and then typing in the name of the package you would like to install.  
 
@@ -46,6 +54,7 @@ For work with Python, we recommend the following packages be installed:
 * tabs-to-spaces
 * minimap
 * open-recent
+* linter-python-pep8
 
 For development with GitHub we recommend:
 
@@ -60,16 +69,36 @@ If using LaTex in this editor, the following packages are helpful:
 * latexer
 * pdf-view
 
-In addition, you will also want to download the [Skim](http://skim-app.sourceforge.net) pdf viewer to aid in displaying pdf's compiled from TeX with Atom.
+In addition, you will also want to download the [Skim](http://skim-app.sourceforge.net) PDF viewer to aid in displaying PDF files compiled from TeX with Atom.
 
-### 2.2 Sublime Text
+
+### 2.2 Sublime Text 3
+
+[Sublime Text 3](https://www.sublimetext.com) is the most widely used and versatile private software text editor. It has tremendous flexibility, as well as the polish of a piece of professional software. Sublime Text 3 will cost $70 for a license, although you can use a trial version indefinitely without charge while only having to suffer through frequent reminders to buy the full version.
+
 
 ### 2.3 Vim
 
-Vim is free and very powerful.  It does, however, have a very steep learning curve - using keyboard shortcuts for all commands.  
+[Vim](http://www.vim.org) is free and very powerful. Vim is the hard core developer's text editor of choice. The learning curve for using vim is a little steeper than that of Atom and Sublime Text 3, but it also has some advantages for efficient programming. Vim has navigation that does not use a mouse or trackpad. Eventually, your fingers never leave your keyboard. Further, most terminals have Vim built in so you can use Vim to edit scripts and modules on the fly with your terminal session.  
 
 
-## 3. PEP8, docstring commenting, and module structure
+## 3. PEP 8, docstring commenting, and module structure
+
+Computer code executes some set of commands in an organized way. In every case, there are often many ways to execute a set of instructions--some ways more efficient than others. However, code has at least three functions.
+
+1. Efficiently execute the task at hand.
+2. Be accessible and usable to other programmers.
+3. Be scalable and integrable with other projects and procedures.
+
+Because of the latter two characteristics, Python code has developed some conventions and best practices, some of which have been institutionalized in the [PEP 8--Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) ("PEP" stands for Python Enhancement Proposals). Key examples PEP 8 Python coding conventions are the following.
+
+* Indents should be 4 spaces (not tab)
+* Limit all lines to a maximum of 79 characters long blocks of text being limited to 72 characters
+* Use a space after a comma
+* Use a space before and after arithmetic operators
+
+In the text editors Atom, Sublime Text 3, and Vim, you can install Linter packages that highlight areas of your code that break PEP 8 rules and tell you what the violation is.
+
 
 [TODO: Add instruction here. Reference the [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb) Jupyter notebook.]
 
@@ -123,6 +152,8 @@ For this training, we have included in this repository five basic Python tutoria
 3. [PythonDescribe.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonDescribe.ipynb). This Jupyter notebook ...
 4. [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb). This Jupyter notebook ...
 5. [PythonVisualize.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonVisualize.ipynb). This Jupyter notebook ...
+
+To further ones Python programming skills, a number of other great resources exist.
 
 ## 7. Intermediate Python tutorials
 
