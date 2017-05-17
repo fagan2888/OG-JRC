@@ -19,8 +19,7 @@ Pre-course Tutorial Areas
 3. PEP8, docstring commenting, and module structure
 4. Git and GitHub tutorial
 5. Jupyter Notebooks
-6. Basic Python tutorials (data structures, logic, functions and modules)
-7. Intermediate Python tutorials (pandas, root finders and minimizers)
+6. Basic Python tutorials (data structures, logic, functions and modules, pandas, root finders and minimizers)
 
 
 ## 1. Instructions for installing the Anaconda distribution of Python
@@ -32,10 +31,18 @@ We recommend that each participant download the Anaconda distribution of Python 
 
 ## 2. Text editor suggestions
 
-You will want a capable text editor for developing your code.  There are three we recommend: [Atom](https://atom.io), [Sublime Text](https://www.sublimetext.com), and [Vim](http://www.vim.org).  Atom and Vim are completely Free, a trial version of Sublime Text is available for free, but a licensed version is $70.
-[TODO: Add instruction about Atom, Sublime Text 3, and Vim.]
+In our recommended Python development workflow, you will write Python scripts and modules (`*.py` files) in a text editor. Then you will run those scripts from your terminal. You will want a capable text editor for developing your code. Many capable text editors exist, but we recommend three.
 
-### 2.1 Atom
+1. [Atom](https://atom.io)
+2. [Sublime Text 3](https://www.sublimetext.com)
+3. [Vim](http://www.vim.org)
+
+Atom and Vim are completely free. A trial version of Sublime Text 3 is available for free, but a licensed version is $70 (US dollars). In the following subsections, we give some of the details of each of the above three text editors.
+
+
+### 2.1. Atom
+
+[Atom](https://atom.io) is an open source text editor developed by people at GitHub.com. This editor has all the features of Sublime Text 3, but it also allows users full customizability. Further, it has been a while now that the users of Atom have surpassed the critical mass necessary to keep the editor progressing with the most cutting edge additions.
 
 There are several packages you'll want to install with Atom.  Once Atom is installed, you can add packages by navigating Atom->Preferences->Install and then typing in the name of the package you would like to install.  
 
@@ -46,6 +53,7 @@ For work with Python, we recommend the following packages be installed:
 * tabs-to-spaces
 * minimap
 * open-recent
+* linter-python-pep8
 
 For development with GitHub we recommend:
 
@@ -60,23 +68,50 @@ If using LaTex in this editor, the following packages are helpful:
 * latexer
 * pdf-view
 
-In addition, you will also want to download the [Skim](http://skim-app.sourceforge.net) pdf viewer to aid in displaying pdf's compiled from TeX with Atom.
+In addition, you will also want to download the [Skim](http://skim-app.sourceforge.net) PDF viewer to aid in displaying PDF files compiled from TeX with Atom.
 
-### 2.2 Sublime Text
+
+### 2.2 Sublime Text 3
+
+[Sublime Text 3](https://www.sublimetext.com) is the most widely used and versatile private software text editor. It has tremendous flexibility, as well as the polish of a piece of professional software. Sublime Text 3 will cost $70 for a license, although you can use a trial version indefinitely without charge while only having to suffer through frequent reminders to buy the full version.
+
 
 ### 2.3 Vim
 
-Vim is free and very powerful.  It does, however, have a very steep learning curve - using keyboard shortcuts for all commands.  
+[Vim](http://www.vim.org) is free and very powerful. Vim is the hard core developer's text editor of choice. The learning curve for using vim is a little steeper than that of Atom and Sublime Text 3, but it also has some advantages for efficient programming. Vim has navigation that does not use a mouse or trackpad. Eventually, your fingers never leave your keyboard. Further, most terminals have Vim built in so you can use Vim to edit scripts and modules on the fly with your terminal session.  
 
 
-## 3. PEP8, docstring commenting, and module structure
+## 3. PEP 8, docstring commenting, and module structure
 
-[TODO: Add instruction here. Reference the [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb) Jupyter notebook.]
+Computer code executes some set of commands in an organized way. In every case, there are often many ways to execute a set of instructions--some ways more efficient than others. However, code has at least three functions.
+
+1. Efficiently execute the task at hand.
+2. Be accessible and usable to other programmers.
+3. Be scalable and integrable with other projects and procedures.
+
+Bill Gates is credited with the following plea for efficiency and parsimony in code writing.
+
+> "Measuring programming progress by lines of code is like measuring aircraft building progress by weight."
+
+Strong support for points (2) and (3) is Eagleson's Law.
+
+> "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else."
+
+Because of the latter two characteristics, Python code has developed some conventions and best practices, some of which have been institutionalized in the [PEP 8--Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) ("PEP" stands for Python Enhancement Proposals). Key examples PEP 8 Python coding conventions are the following.
+
+* Indents should be 4 spaces (not tab)
+* Limit all lines to a maximum of 79 characters long blocks of text being limited to 72 characters
+* Use a space after a comma
+* Use a space before and after arithmetic operators
+
+In the text editors Atom, Sublime Text 3, and Vim, you can install Linter packages that highlight areas of your code that break PEP 8 rules and tell you what the violation is.
+
+There are fewer conventions in docstring structure, but we have developed some of our own that are outlined in the [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb) Jupyter notebook. See especially Sections 3 and 4.
 
 
 ## 4. Git and GitHub tutorial
 
-We have included a tutorial on using [Git and GitHub.com](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/git_tutorial.pdf) in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory of this repository.
+We have included a tutorial on using [Git and GitHub.com](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/git_tutorial.pdf) in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory of this repository. Git is a powerful version control software that comes natively installed on many machines and is widely used. GitHub.com is the most widely used online platform for hosting open source projects and integrating with Git software. Git has a significant learning curve, but it is essential for large collaborations that involve software development.
 
 
 ## 5. Jupyter Notebooks
@@ -114,7 +149,7 @@ A Code cell will have a `In [ ]:` immediately to the left of the cell for input.
 When you are done with a Jupyter notebook, you first save any changes that you want to remain with the notebook. Then you close the browser windows associated with that Jupyter notebook session. You must then close the local server that was opened to run the Jupyter notebook in your terminal window. On a Mac or Windows, this is done by going to your terminal window and typing `Ctrl-C` and then selecting `y` for yes and hitting `Enter`.
 
 
-## 6. Basic Python tutorials
+## 6. Python tutorials
 
 For this training, we have included in this repository five basic Python tutorials in the [Tutorials](https://github.com/OpenRG/OG-JRC/tree/master/Tutorials) directory.
 
@@ -123,7 +158,22 @@ For this training, we have included in this repository five basic Python tutoria
 3. [PythonDescribe.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonDescribe.ipynb). This Jupyter notebook ...
 4. [PythonFuncs.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonFuncs.ipynb). This Jupyter notebook ...
 5. [PythonVisualize.ipynb](https://github.com/OpenRG/OG-JRC/blob/master/Tutorials/PythonVisualize.ipynb). This Jupyter notebook ...
+6. QuantEcon.net has an introduction to root finding and minimization in its [SciPy](https://lectures.quantecon.org/py/scipy.html) lecture. [TODO: Make more extensive Jupyter notebook on root finders and minimizers, with focus on nonlinear multivariate problems.]
 
-## 7. Intermediate Python tutorials
+To further ones Python programming skills, a number of other great resources exist.
 
-[TODO: Add root finder and minimization Jupyter notebook.]
+* The [official Python 3 tutorial site](https://docs.python.org/3/tutorial/)
+* [QuantEcon.net](https://lectures.quantecon.org/py/index.html) is a site run by [Thomas Sargent](http://www.tomsargent.com/) (NYU Stern) and [John Stachurski](http://johnstachurski.net/) (Australia National University). QuantEcon has a very large number of high-quality economics focused computational tutorials in Python.
+* [Python computational labs](http://www.acme.byu.edu/2016-2017-materials/) of the Applied and Computational Mathematics Emphasis at Brigham Young University
+* [Code Academy's Python learning module](https://www.codecademy.com/learn/python)
+
+In addition, a number of excellent textbooks and reference manuals are very helpful and may be available in your local library. Or you may just want to have these in your own library. Lutz (2013) is a giant 1,500-page reference manual that has an expansive collection of materials targeted at beginners. Beazley (2009) is a more concise reference but is targeted at readers with some experience using Python. Despite its focus on a particular set of tools in the Python programming language, McKinney (2013) has a great introductory section that can serve as a good starting tutorial. Further, its focus on Python's data analysis capabilities is truly one of the important features of Python. Rounding out the list is Langtangen (2010). This book's focus on scientists and engineers makes it a unique reference for optimization, wrapping C and Fortran and other scientific computing topics using Python.
+
+
+## References
+
+* Beazley, David M., *Python Essential Reference*, 4th edition, Addison-Wesley (2009).
+* Langtangen, Hans Petter, *Python Scripting for Computational Science*, Texts in Computational Science and Engineering, 3rd edition, Springer (2010).
+* Lutz, Mark, *Learning Python*, 5th edition, O'Reilly Media, Inc. (2013)
+* McKinney, Wes, *Python for Data Analysis*, O'Reilly Median, Inc. (2013)
+
