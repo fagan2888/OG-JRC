@@ -32,7 +32,41 @@ We recommend that each participant download the Anaconda distribution of Python 
 
 ## 2. Text editor suggestions
 
+You will want a capable text editor for developing your code.  There are three we recommend: [Atom](https://atom.io), [Sublime Text](https://www.sublimetext.com), and [Vim](http://www.vim.org).  Atom and Vim are completely Free, a trial version of Sublime Text is available for free, but a licensed version is $70.
 [TODO: Add instruction about Atom, Sublime Text 3, and Vim.]
+
+### 2.1 Atom
+
+There are several packages you'll want to install with Atom.  Once Atom is installed, you can add packages by navigating Atom->Preferences->Install and then typing in the name of the package you would like to install.  
+
+For work with Python, we recommend the following packages be installed:
+
+* MagicPython
+* python-indent
+* tabs-to-spaces
+* minimap
+* open-recent
+
+For development with GitHub we recommend:
+
+* merge-conflict
+
+If using LaTex in this editor, the following packages are helpful:
+
+* atom-latex
+* latextools
+* autocomplete-bitex
+* dictionary
+* latexer
+* pdf-view
+
+In addition, you will also want to download the [Skim](http://skim-app.sourceforge.net) pdf viewer to aid in displaying pdf's compiled from TeX with Atom.
+
+### 2.2 Sublime Text
+
+### 2.3 Vim
+
+Vim is free and very powerful.  It does, however, have a very steep learning curve - using keyboard shortcuts for all commands.  
 
 
 ## 3. PEP8, docstring commenting, and module structure
