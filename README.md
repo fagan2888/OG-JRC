@@ -35,7 +35,7 @@ We recommend that each participant download the Anaconda distribution of Python 
 You will want a capable text editor for developing your code.  There are three we recommend: [Atom](https://atom.io), [Sublime Text](https://www.sublimetext.com), and [Vim](http://www.vim.org).  Atom and Vim are completely Free, a trial version of Sublime Text is available for free, but a licensed version is $70.
 [TODO: Add instruction about Atom, Sublime Text 3, and Vim.]
 
-### 2.1 Atom
+### 2.1. Atom
 
 There are several packages you'll want to install with Atom.  Once Atom is installed, you can add packages by navigating Atom->Preferences->Install and then typing in the name of the package you would like to install.  
 
