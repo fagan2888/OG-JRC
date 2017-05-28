@@ -16,11 +16,11 @@ This will be an intensive two weeks. We are providing your researchers 7 areas o
 
 | Date | Day | Topic | Notes | Code |
 |------|-----|-------|----------|----------|
-| May 29 | M | Exogenous labor: 3 period, S period        | 3 period, 80 period  |  3 period, 80 period     |
-| May 30 | T | Endogenous labor, 3 period |  |      |
-| May 31 | W | Endogenous labor, S period; Ability Types, Bequests  |   |      |
+| May 29 | M | Exogenous labor: 3 period, S period        | [3 period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_3perExogLab/OGtext_ch5.pdf), [80 period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_SperExogLab/OGtext_ch6.pdf)  |  3 period, 80 period     |
+| May 30 | T | Endogenous labor, S period | [Endog Labor](https://github.com/OpenRG/OG-JRC/blob/master/Day2_EndogLab/OGtext_ch7.pdf) |  Endog Labor    |
+| May 31 | W | Heterogeneous Ability Types, Bequests  | [Ability Types](https://github.com/OpenRG/OG-JRC/tree/master/Day2_HeteroAbil), Bequests  |  Ability Types, Bequests    |
 | June 1 | Th | Demographics  |      |  |
-| June 2 |  F | Demographics  |        |      |
+| June 2 | F | Demographics  |        |      |
 | June 5 | M | Tax Functions        |  |      |
 | June 6 | T | Tax Functions|  |      |
 | June 7 | W | Small Open Economy  |   |      |
