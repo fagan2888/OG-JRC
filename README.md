@@ -12,7 +12,22 @@ We have created a series of textbook chapters complete with theoretical expositi
 
 This will be an intensive two weeks. We are providing your researchers 7 areas of tutorials that they will benefit from reading before the training. We will, of course, teach these things as we go through the material. But we will be able to proceed at a faster pace if the attendees are already familiar with most of the concepts below.
 
-Pre-course Tutorial Areas
+## Daily Course Schedule ##
+
+| Date | Day | Topic | Notes | Code |
+|------|-----|-------|----------|----------|
+| May 29 | M | Exogenous labor: 3 period, S period        | 3 period, 80 period  |  3 period, 80 period     |
+| May 30 | T | Endogenous labor, 3 period |  |      |
+| May 31 | W | Endogenous labor, S period; Ability Types, Bequests  |   |      |
+| June 1 | Th | Demographics  |      |  |
+| June 2 |  F | Demographics  |        |      |
+| June 5 | M | Tax Functions        |  |      |
+| June 6 | T | Tax Functions|  |      |
+| June 7 | W | Small Open Economy  |   |      |
+| June 8 | Th | Unbalanced Government Budget  |        |  |
+| June 9 |  F | Multi-Sector Economy |      |      |
+
+# Pre-course Tutorial Areas
 
 1. Instructions for installing the Anaconda distribution of Python
 2. Text editor suggestions (Atom, Sublime Text 3, Vim)
