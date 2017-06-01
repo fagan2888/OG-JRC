@@ -1,0 +1,6 @@
+git+git://github.com/OpenRG/OG-JRC
+pandas
+matplotlib
+numpy
+os
+pickle

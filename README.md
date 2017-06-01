@@ -1,5 +1,7 @@
 # JRC Overlapping Generations Model Training by Open Research Group
 
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/openrg/og-jrc)
+
 This public repository contains the training materials, tutorials, and code for the two week training delivered to the Joint Research Centre of the European Commission in Seville, Spain, May 29 to June 9, 2017 by [Richard Evans](https://sites.google.com/site/rickecon/) and [Jason DeBacker](http://jasondebacker.com/) of [Open Research Group, Inc.](http://openrg.com/) (OpenRG).
 
 We are planning on the following schedule each of the 10 workdays during that time. Let us know if we need to change this schedule in any way.
