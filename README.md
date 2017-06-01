@@ -16,10 +16,10 @@ This will be an intensive two weeks. We are providing your researchers 7 areas o
 
 | Date | Day | Topic | Notes | Code |
 |------|-----|-------|----------|----------|
-| May 29 | M | Exogenous labor: 3 period, S period        | [3 period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_3perExogLab/OGtext_ch5.pdf), [80 period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_SperExogLab/OGtext_ch6.pdf)  |  3 period, 80 period     |
-| May 30 | T | Endogenous labor, S period | [Endog Labor](https://github.com/OpenRG/OG-JRC/blob/master/Day2_EndogLab/OGtext_ch7.pdf) |  Endog Labor    |
-| May 31 | W | Heterogeneous Ability Types, Bequests  | [Ability Types](https://github.com/OpenRG/OG-JRC/tree/master/Day2_HeteroAbil), Bequests  |  Ability Types, Bequests    |
-| June 1 | Th | Demographics  |      |  |
+| May 29 | M | Exogenous labor: 3 period, S period        | [3 period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_3perExogLab/OGtext_ch5.pdf), [S period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_SperExogLab/OGtext_ch6.pdf)  |  [3 period](https://github.com/OpenRG/OG-JRC/tree/master/Day1_3perExogLab), [S period](https://github.com/OpenRG/OG-JRC/tree/master/Day2_SperExogLab)     |
+| May 30 | T | Endogenous labor, S period | [Endog Labor](https://github.com/OpenRG/OG-JRC/blob/master/Day2_EndogLab/OGtext_ch7.pdf) |  [Endog Labor](https://github.com/OpenRG/OG-JRC/tree/master/Day3_EndogLab)    |
+| May 31 | W | Heterogeneous Ability Types  | [Ability Types](https://github.com/OpenRG/OG-JRC/tree/master/Day2_HeteroAbil)  |  [Ability Types](https://github.com/OpenRG/OG-JRC/tree/master/Day4_HeteroAbil)    |
+| June 1 | Th | Demographics  | [Demographics](https://github.com/OpenRG/OG-JRC/blob/master/Day5_Demog/OGtext_ch10.pdf)     |  |
 | June 2 | F | Demographics  |        |      |
 | June 5 | M | Tax Functions        |  |      |
 | June 6 | T | Tax Functions|  |      |
@@ -191,4 +191,3 @@ In addition, a number of excellent textbooks and reference manuals are very help
 * Langtangen, Hans Petter, *Python Scripting for Computational Science*, Texts in Computational Science and Engineering, 3rd edition, Springer (2010).
 * Lutz, Mark, *Learning Python*, 5th edition, O'Reilly Media, Inc. (2013)
 * McKinney, Wes, *Python for Data Analysis*, O'Reilly Median, Inc. (2013)
-
