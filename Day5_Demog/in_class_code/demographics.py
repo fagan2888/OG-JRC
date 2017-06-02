@@ -108,7 +108,8 @@ def get_fert(totpers, min_yr, max_yr, graph=False):
     '''
     # Get current population data (2013) for weighting
     cur_path = os.path.split(os.path.abspath(__file__))[0]
-    pop_data = pd.read_csv('data/pop_data.csv')
+    #pop_data = pd.read_csv('data/pop_data.csv')
+    pop_data = pd.read_table('data/pop_data.csv', sep=',', thousands=',')
     pop_data_samp = pop_data[(pop_data['Age'] >= min_yr - 1) &
                              (pop_data['Age'] <= max_yr - 1)]
     # age_year_all = pop_data_samp['Age'] + 1
