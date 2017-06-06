@@ -13,7 +13,7 @@ import pickle
 # takes in intial guesses at parameters
 # returns a value of the obj function
 def crit(params_init, *args):
-    (A_tilde, B_tilde, E_tilde, C_tilde, D_tilde, F_tilde, max_x, max_y, phi,
+    (A_tilde, B_tilde, C_tilde, D_tilde, max_x, max_y, phi,
      shift) = params_init
     min_x, min_y, shift_x, shift_y, df = args
     ## Change here - needed weighted average for X and Y....
@@ -30,6 +30,8 @@ def crit(params_init, *args):
     wgts = df['Weights']
     tax_rates = df['MTRx']
 
+    E_tilde = A_tilde + B_tilde
+    F_tilde = C_tilde+D_tilde
 
     X_tilde = ((X - ((wgts * X).sum() / wgts.sum())) / ((wgts * X).sum()
                                                         / wgts.sum()))
@@ -52,7 +54,7 @@ def crit(params_init, *args):
     tau_est = (((tau_x - shift_x) ** phi) * ((tau_y - shift_y) ** (1-phi)) +
                shift)
 
-    print('Params guess: ', params_init)
+    #print('Params guess: ', params_init)
     crit = (wgts * ((tau_est - tax_rates) ** 2)).sum()
 
     return crit
@@ -109,8 +111,8 @@ y10 = df2017['Capital Income'].quantile(0.1)
 x10 = df2017['Labor Income'].quantile(0.1)
 min_x = (df2017['MTRx'][df2017['Capital Income'] < y10]).min()
 min_y = (df2017['MTRx'][df2017['Labor Income'] < x10]).min()
-shift_x = min_x - 0.01
-shift_y = min_x - 0.01
+shift_x = np.absolute(min_x) - 0.01
+shift_y = np.absolute(min_y) - 0.01
 
 
 # make initial guesses for estimated parameters
@@ -125,11 +127,11 @@ max_y_init = 0.7
 phi_init = 0.6
 shift_init = 0.0
 
-params_init = np.array([A_tilde_init, B_tilde_init, E_tilde_init, C_tilde_init,
-                        D_tilde_init, F_tilde_init, max_x_init, max_y_init,
+params_init = np.array([A_tilde_init, B_tilde_init, C_tilde_init,
+                        D_tilde_init, max_x_init, max_y_init,
                         phi_init, shift_init])
 est_args = (min_x, min_y, shift_x, shift_y, df2017)
-bnds = ((1e-12, None), (1e-12, None), (1e-12, None), (1e-12, None),
+bnds = ((1e-12, None), (1e-12, None),
         (1e-12, None), (1e-12, None), (min_x + 1e-4, 1.0), (min_y + 1e-4, 1.0),
         (0, 1), (None, None))
 params_hat = opt.minimize(crit, params_init, args=(est_args), method='L-BFGS-B',
