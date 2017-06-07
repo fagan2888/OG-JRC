@@ -1,6 +1,5 @@
 # JRC Overlapping Generations Model Training by Open Research Group
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/openrg/og-jrc)
 
 This public repository contains the training materials, tutorials, and code for the two week training delivered to the Joint Research Centre of the European Commission in Seville, Spain, May 29 to June 9, 2017 by [Richard Evans](https://sites.google.com/site/rickecon/) and [Jason DeBacker](http://jasondebacker.com/) of [Open Research Group, Inc.](http://openrg.com/) (OpenRG).
 
@@ -21,12 +20,12 @@ This will be an intensive two weeks. We are providing your researchers 7 areas o
 | May 29 | M | Exogenous labor: 3 period, S period        | [3 period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_3perExogLab/OGtext_ch5.pdf), [S period](https://github.com/OpenRG/OG-JRC/blob/master/Day1_SperExogLab/OGtext_ch6.pdf)  |  [3 period](https://github.com/OpenRG/OG-JRC/tree/master/Day1_3perExogLab), [S period](https://github.com/OpenRG/OG-JRC/tree/master/Day2_SperExogLab)     |
 | May 30 | T | Endogenous labor, S period | [Endog Labor](https://github.com/OpenRG/OG-JRC/blob/master/Day2_EndogLab/OGtext_ch7.pdf) |  [Endog Labor](https://github.com/OpenRG/OG-JRC/tree/master/Day3_EndogLab)    |
 | May 31 | W | Heterogeneous Ability Types  | [Ability Types](https://github.com/OpenRG/OG-JRC/tree/master/Day2_HeteroAbil)  |  [Ability Types](https://github.com/OpenRG/OG-JRC/tree/master/Day4_HeteroAbil)    |
-| June 1 | Th | Demographics  | [Demographics](https://github.com/OpenRG/OG-JRC/blob/master/Day5_Demog/OGtext_ch10.pdf)     |  |
+| June 1 | Th | Demographics  | [Demographics](https://github.com/OpenRG/OG-JRC/blob/master/Day5_Demog/OGtext_ch10.pdf)     | [Demographics](https://github.com/OpenRG/OG-JRC/tree/master/Day5_Demog/in_class_code) |
 | June 2 | F | Demographics  |        |      |
-| June 5 | M | Tax Functions        |  |      |
+| June 5 | M | Tax Functions        | [Tax Functions](https://github.com/OpenRG/OG-JRC/blob/master/Day6_TaxFunctions/OG_Chap10.pdf) |  [Tax Functions](https://github.com/OpenRG/OG-JRC/tree/master/Day6_TaxFunctions/in_class_code)     |
 | June 6 | T | Tax Functions|  |      |
-| June 7 | W | Small Open Economy  |   |      |
-| June 8 | Th | Unbalanced Government Budget  |        |  |
+| June 7 | Th | Unbalanced Government Budget  | [Unbal GBC](https://github.com/OpenRG/OG-JRC/blob/master/Day8_UnbalGovt/OGtext_ch15.pdf)       | [Unbal GBC](https://github.com/OpenRG/OG-JRC/tree/master/Day8_UnbalGovt) |
+| June 8 | W | Small Open Economy  |   |      |
 | June 9 |  F | Multi-Sector Economy |      |      |
 
 # Pre-course Tutorial Areas
