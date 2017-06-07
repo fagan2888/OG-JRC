@@ -8,6 +8,7 @@ This module defines the following function(s):
 
 import numpy as np
 import scipy.optimize as opt
+import tax
 
 
 def get_MU_c(c, sigma):
@@ -57,16 +58,21 @@ def get_recurs_b(cvec, nvec, r, w):
 
 
 def get_n_errors(nvec, *args):
-    cvec, w, sigma, chi_n_vec, l_tilde, b, upsilon = args
+    (cvec, bvec, r, w, mtrxparams, factor, sigma, chi_n_vec, l_tilde,
+        b_ellip, upsilon) = args
     MU_c = get_MU_c(cvec, sigma)
-    MDU_n = get_MDU_n(nvec, l_tilde, b, upsilon)
-    n_errors = w * MU_c - chi_n_vec * MDU_n
+    MDU_n = get_MDU_n(nvec, l_tilde, b_ellip, upsilon)
+    lab_inc = w * nvec
+    cap_inc = r * bvec
+    MTRx = tax.get_taxrates(lab_inc, cap_inc, factor, mtrxparams)
+    n_errors = w * (1 - MTRx) * MU_c - chi_n_vec * MDU_n
 
     return n_errors
 
 
-def get_n_s(cvec, w, sigma, chi_n_vec, l_tilde, b, upsilon):
-    n_args = (cvec, w, sigma, chi_n_vec, l_tilde, b, upsilon)
+def get_n_s(n_args):
+    (cvec, bvec, r, w, mtrxparams, factor, sigma, chi_n_vec, l_tilde,
+        b_ellip, upsilon) = n_args
     n_guess = 0.5 * l_tilde * np.ones_like(cvec)
     results_n = opt.root(get_n_errors, n_guess, args=(n_args),
                          method='lm')
@@ -75,12 +81,79 @@ def get_n_s(cvec, w, sigma, chi_n_vec, l_tilde, b, upsilon):
     return nvec
 
 
+def get_savings(c_s, n_s, b_s, args):
+    (r, w, X, factor, etrparams) = args
+    lab_inc = w * n_s
+    cap_inc = r * b_s
+    tot_tax_liab = tax.get_tot_tax_liab(lab_inc, cap_inc, factor,
+                                        etrparams)
+    b_sp1 = (1 + r) * b_s + w * n_s + X - tot_tax_liab - c_s
+
+    return b_sp1
+
+
+def get_cn(cn_vec, *args):
+    '''
+    EulErrors = (2,) vector, errors from 2 household Euler equations
+    '''
+    (c_sm1, b_s, r, w, factor, beta, sigma, chi_n_s, l_tilde, b_ellip,
+        upsilon, mtrxparams, mtryparams) = args
+    c_s, n_s = cn_vec
+
+    MU_csm1 = get_MU_c(c_sm1, sigma)
+    MU_cs = get_MU_c(c_s, sigma)
+    lab_inc = w * n_s
+    cap_inc = r * b_s
+    MTRy = tax.get_taxrates(lab_inc, cap_inc, factor, mtryparams)
+    n_args = (c_s, b_s, r, w, mtrxparams, factor, sigma, chi_n_s, l_tilde,
+              b_ellip, upsilon)
+    error1 = get_n_errors(n_s, *n_args)
+    error2 = MU_csm1 - beta * (1 + r * (1 - MTRy)) * MU_cs
+    EulErrors = np.array([error1, error2])
+
+    return EulErrors
+
+
+def get_cnbvecs(c1, args):
+    '''
+    bvec = (S,) vector, b_2, b3,...b_{S+1}
+    '''
+    (r, w, X, factor, beta, sigma, chi_n_vec, l_tilde, b_ellip, upsilon,
+        S, etrparams, mtrxparams, mtryparams) = args
+    cvec = np.zeros(S)
+    cvec[0] = c1
+    nvec = np.zeros(S)
+    bvec = np.zeros(S)
+
+    n1_args = (c1, 0.0, r, w, mtrxparams, factor, sigma, chi_n_vec[0],
+               l_tilde, b_ellip, upsilon)
+    n1 = get_n_s(n1_args)
+    nvec[0] = n1
+    bs_args = (r, w, X, factor, etrparams)
+    b2 = get_savings(c1, n1, 0.0, bs_args)
+    bvec[0] = b2
+    for s in range(1, S):
+        cs_init = cvec[s - 1]
+        ns_init = nvec[s - 1]
+        cn_init = np.array([cs_init, ns_init])
+        c_sm1 = cvec[s - 1]
+        b_s = bvec[s - 1]
+        chi_n_s = chi_n_vec[s]
+        cn_args = (c_sm1, b_s, r, w, factor, beta, sigma, chi_n_s,
+                   l_tilde, b_ellip, upsilon, mtrxparams, mtryparams)
+        results_cn = opt.root(get_cn, cn_init, args=(cn_args))
+        c_s, n_s = results_cn.x
+        cvec[s] = c_s
+        nvec[s] = n_s
+        b_s = bvec[s - 1]
+        b_sp1 = get_savings(c_s, n_s, b_s, bs_args)
+        bvec[s] = b_sp1
+
+    return cvec, nvec, bvec
+
+
 def get_bSp1(c1, *args):
-    r, w, beta, sigma, chi_n_vec, l_tilde, b, upsilon, S = args
-    cvec = get_recurs_c(c1, r, beta, sigma, S)
-    nvec = get_n_s(cvec, w, sigma, chi_n_vec, l_tilde, b, upsilon)
-    bvec = get_recurs_b(cvec, nvec, r, w)
+    cvec, nvec, bvec = get_cnbvecs(c1, args)
     b_Sp1 = bvec[-1]
-    # print('c1: ', c1, ', b_Sp1: ', b_Sp1)
 
     return b_Sp1
