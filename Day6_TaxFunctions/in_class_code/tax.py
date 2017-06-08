@@ -3,6 +3,7 @@ This module defines functions for the tax rates and total tax liability
 '''
 
 # Import libraries
+import numpy as np
 
 
 def get_taxrates(lab_inc, cap_inc, factor, params):
@@ -12,8 +13,10 @@ def get_taxrates(lab_inc, cap_inc, factor, params):
     '''
     (A, B, C, D, max_x, min_x, max_y, min_y, shift_x, shift_y, shift,
         phi) = params
-    X = factor * lab_inc
-    Y = factor * cap_inc
+    X = np.maximum(0.00001, factor * lab_inc)
+    Y = np.maximum(0.00001, factor * cap_inc)
+    # X = factor * lab_inc
+    # Y = factor * cap_inc
     X2 = X ** 2
     Y2 = Y ** 2
     ratio_x = (A * X2 + B * X) / (A * X2 + B * X + 1)

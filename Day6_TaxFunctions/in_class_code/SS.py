@@ -23,28 +23,31 @@ def get_SS(args, graph=False):
         avg_inc_data) = args
     dist = 10
     mindist = 1e-08
-    maxiter = 1
+    maxiter = 500
     ss_iter = 0
-    xi = 0.05
+    xi = 0.9
 
     r_params = (alpha, A, delta)
     w_params = (alpha, A)
+    Y_params = (alpha, A)
 
     while dist > mindist and ss_iter < maxiter:
         ss_iter += 1
-        K, L, X, factor = init_vals
+        K, L, X = init_vals
+        Y = aggr.get_Y(K, L, Y_params)
+        factor = (S * avg_inc_data) / (Y - delta * K)
         r = firms.get_r(K, L, r_params)
         w = firms.get_w(K, L, w_params)
-        c1_guess = 1.0
+        c1_guess = 0.1
         c1_args = (r, w, X, factor, beta, sigma, chi_n_vec, l_tilde,
                    b_ellip, upsilon, S, etrparam_vec, mtrxparam_vec,
                    mtryparam_vec)
         results_c1 = opt.root(hh.get_bSp1, c1_guess, args=(c1_args))
         c1 = results_c1.x
         cvec, nvec, bvec = hh.get_cnbvecs(c1, c1_args)
-        print('cvec: ', cvec)
-        print('nvec: ', nvec)
-        print('bvec: ', bvec)
+        # print('cvec: ', cvec)
+        # print('nvec: ', nvec)
+        # print('bvec: ', bvec)
         bs_vec = np.append(0, bvec[:-1])
         K_new = aggr.get_K(bvec[:-1])
         L_new = aggr.get_L(nvec)
@@ -53,12 +56,13 @@ def get_SS(args, graph=False):
         tot_tax_liab_all = tax.get_tot_tax_liab(lab_inc, cap_inc,
                                                 factor, etrparam_vec)
         X_new = (1 / S) * (tot_tax_liab_all.sum())
-        factor_new = avg_inc_data / ((1 / S) *
-                                     (r * bs_vec + w * nvec).sum())
-        new_vals = np.array([K_new, L_new, X_new, factor_new])
-        dist = ((new_vals - init_vals) ** 2).sum()
+        # factor_new = avg_inc_data / ((1 / S) *
+        #                              (r * bs_vec + w * nvec).sum())
+        new_vals = np.array([K_new, L_new, X_new])
+        dist = ((((new_vals - init_vals) / init_vals) * 100) ** 2).sum()
         init_vals = xi * new_vals + (1 - xi) * init_vals
         print('iter:', ss_iter, ' dist: ', dist)
+        print(init_vals)
 
     c_ss = cvec
     n_ss = nvec
@@ -71,7 +75,7 @@ def get_SS(args, graph=False):
     Y_ss = aggr.get_Y(K_ss, L_ss, Y_params)
     C_ss = aggr.get_C(c_ss)
     X_ss = X_new
-    factor_ss = factor_new
+    factor_ss = factor
     tot_tax_liab_all_ss = tot_tax_liab_all
     tot_tax_liab_ss = X_ss * S
 
