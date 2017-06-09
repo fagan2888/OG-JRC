@@ -15,8 +15,15 @@ def get_r(K, L, params):
     return r
 
 
-def get_w(K, L, params):
-    alpha, A = params
-    w = (1 - alpha) * A * ((K / L) ** alpha)
+def get_w(params):
+    alpha, A, delta, r_star = params
+    w = ((1 - alpha) * A * ((alpha * A) / (r_star + delta)) ** (alpha /
+                                                                (1 - alpha)))
 
     return w
+
+def get_K_d(L_d, params):
+    alpha, A, delta, r_star = params
+    K_d = L_d * ((alpha * A) / (r_star + delta)) ** (1 / (1 - alpha))
+
+    return K_d

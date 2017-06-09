@@ -17,51 +17,44 @@ from matplotlib.ticker import MultipleLocator
 
 
 def get_SS(args, graph=False):
-    (KL_init, beta, sigma, chi_n_vec, l_tilde, b, upsilon, S, alpha, A,
-        delta) = args
-    dist = 10
-    mindist = 1e-08
-    maxiter = 500
-    ss_iter = 0
-    xi = 0.2
+    (beta, sigma, chi_n_vec, l_tilde, b, upsilon, S, alpha, A,
+        delta, r_star) = args
 
-    r_params = (alpha, A, delta)
-    w_params = (alpha, A)
+    w_params = (alpha, A, delta, r_star)
 
-    while dist > mindist and ss_iter < maxiter:
-        ss_iter += 1
-        K, L = KL_init
-        r = firms.get_r(K, L, r_params)
-        w = firms.get_w(K, L, w_params)
-        c1_guess = 1.0
-        c1_args = (r, w, beta, sigma, chi_n_vec, l_tilde, b, upsilon, S)
-        results_c1 = opt.root(hh.get_bSp1, c1_guess, args=(c1_args))
-        c1 = results_c1.x
-        cvec = hh.get_recurs_c(c1, r, beta, sigma, S)
-        nvec = hh.get_n_s(cvec, w, sigma, chi_n_vec, l_tilde, b,
-                          upsilon)
-        bvec = hh.get_recurs_b(cvec, nvec, r, w)
-        K_new = aggr.get_K(bvec[:-1])
-        L_new = aggr.get_L(nvec)
-        KL_new = np.array([K_new, L_new])
-        dist = ((KL_new - KL_init) ** 2).sum()
-        KL_init = xi * KL_new + (1 - xi) * KL_init
-        print('iter:', ss_iter, ' dist: ', dist)
+    r = r_star
+    w = firms.get_w(w_params)
+    c1_guess = 1.0
+    c1_args = (r, w, beta, sigma, chi_n_vec, l_tilde, b, upsilon, S)
+    results_c1 = opt.root(hh.get_bSp1, c1_guess, args=(c1_args))
+    c1 = results_c1.x
+    cvec = hh.get_recurs_c(c1, r, beta, sigma, S)
+    nvec = hh.get_n_s(cvec, w, sigma, chi_n_vec, l_tilde, b,
+                      upsilon)
+    bvec = hh.get_recurs_b(cvec, nvec, r, w)
+    K_s = aggr.get_K(bvec[:-1])
+    L_s = aggr.get_L(nvec)
+    L_d = L_s
+    K_params = (alpha, A, delta, r_star)
+    K_d = firms.get_K_d(L_d, K_params)
+    K_f = K_d - K_s
 
     c_ss = cvec
     n_ss = nvec
     b_ss = bvec
-    K_ss = K_new
-    L_ss = L_new
+    K_s_ss = K_s
+    K_d_ss = K_d
+    K_f_ss = K_f
+    L_ss = L_s
     r_ss = r
     w_ss = w
     Y_params = (alpha, A)
-    Y_ss = aggr.get_Y(K_ss, L_ss, Y_params)
+    Y_ss = aggr.get_Y(K_d_ss, L_ss, Y_params)
     C_ss = aggr.get_C(c_ss)
 
-    ss_output = {'c_ss': c_ss, 'n_ss': n_ss, 'b_ss': b_ss, 'K_ss': K_ss,
-                 'L_ss': L_ss, 'r_ss': r_ss, 'w_ss': w_ss, 'Y_ss': Y_ss,
-                 'C_ss': C_ss}
+    ss_output = {'c_ss': c_ss, 'n_ss': n_ss, 'b_ss': b_ss, 'K_s_ss': K_s_ss,
+                 'K_d_ss': K_d_ss, 'K_f_ss': K_f_ss, 'L_ss': L_ss, 'r_ss': r_ss,
+                 'w_ss': w_ss, 'Y_ss': Y_ss, 'C_ss': C_ss}
 
     if graph:
         # Create directory if images directory does not already exist
