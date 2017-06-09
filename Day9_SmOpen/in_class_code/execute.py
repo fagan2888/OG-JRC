@@ -25,15 +25,16 @@ A = 1.0
 alpha = 0.35
 delta_annual = 0.05
 delta = 1 - ((1 - delta_annual) ** (80 / S))
+
+# Open Economy parameters
+r_star = 0.04
+
 # SS parameters
 SS_graph = True
 
 
-K_init = 100.0
-L_init = 50.0
-KL_init = np.array([K_init, L_init])
 
-ss_args = (KL_init, beta, sigma, chi_n_vec, l_tilde, b, upsilon, S,
-           alpha, A, delta)
+ss_args = (beta, sigma, chi_n_vec, l_tilde, b, upsilon, S,
+           alpha, A, delta, r_star)
 ss_output = ss.get_SS(ss_args, SS_graph)
 pickle.dump(ss_output, open('ss_output.pkl', 'wb'))
